@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% block content %}
+                <div class="content-section">
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <fieldset >
+                               <marquee direction="right">   
+                                   <h1 >Text Summerization</h1>
+                               </marquee> 
+                            </br>
+                        </br>
+                        <h1 class="hhh" >Enter your text</h1>
+                               <div class="hh">
+                             
+                                {{ form.text.label(class="form-control-label") }}
+                                {{ form.text(class="form-control form-control-lg",rows='10',cols='200',align='centre') }}
+                                <!-- {{form.text(rows='100',cols='50')}} -->
+                            </div>
+                       
+                        </br>
+                            <div class="form-group">
+                                {{ form.url.label() }}
+                                {{ form.url(class="form-control form-control-lg") }}  
+                            </div>
+                            <div class="form-group">
+                                {{ form.length.label(class="form-control-label") }}
+                                {{ form.length(class="form-control form-control-lg") }}
+                            </div>
+                            <!-- <div class="form-group">
+                                {{ form.file.label() }}
+                                {{ form.file(class="form-control-file") }}
+                                {% if form.file.errors %}
+                                    {% for error in form.file.errors %}
+                                        <span class="text-danger"> {{ error }} </span></br>
+                                    {% endfor %}
+                                {% endif %}      
+                            </div> -->
+                        </fieldset>
+                        <!-- <div class="form-group" id="output" data-toggle="modal" data-target="#myModal">
+                            
+                            {{ form.submit(class="btn btn-outline-info") }}
+                        </div> -->
+                   
+
+
+                <div class="container">
+                        <!-- <h2>Modal Example</h2> -->
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="btn btn-info btn-lg form-group" data-toggle="modal" data-target="#myModal"> {{ form.submit(class="btn btn-outline-info") }}</button>
+                    </div>  
+                </form>
+            </div>   
+                <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                        
+                          <!-- Modal content-->
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Summerized Text</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>{{ form.result }}</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    
+{% endblock content %}
+

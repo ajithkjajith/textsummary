@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+                <!-- <div class="content-section"> -->
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <fieldset >
+                               <marquee direction="right">   
+                                   <h1 >Text Summerization</h1>
+                               </marquee> 
+                            </br>
+                        </br>
+                        <h3 class="hhh" >Enter your text</h3>
+                               <div class="hh">
+                             
+                                {{ form.text.label(class="form-control-label") }}
+                                {{ form.text(class="form-control form-control-lg",rows='10',cols='200',align='centre') }}
+                                <!-- {{form.text(rows='100',cols='50')}} -->
+                            </div>
+                       
+                        </br>
+                        <h4 class="hhh" >Url/Link</h4>
+                            <div class="form-group">
+                                {{ form.url.label() }}
+                                {{ form.url(class="form-control form-control-lg") }}  
+                            </div>
+                          
+                            <h4 class="hhh" >Length of Summary</h4>
+                            <div class="form-group">
+                                {{ form.length.label(class="form-control-label") }}
+                                {{ form.length(class="form-control form-control-lg") }}
+                            </div>
+                            <!-- <div class="form-group">
+                                {{ form.file.label() }}
+                                {{ form.file(class="form-control-file") }}
+                                {% if form.file.errors %}
+                                    {% for error in form.file.errors %}
+                                        <span class="text-danger"> {{ error }} </span></br>
+                                    {% endfor %}
+                                {% endif %}      
+                            </div> -->
+                        </fieldset>
+                        <div class="form-group">
+                           
+                            {{ form.submit(class="btn btn-outline-info") }}
+                        </div>
+                    </form>
+                <!-- </div> -->
+            <div class="content-section">
+                        <fieldset class="form-group">
+                            <legend class="border-bottom mb-12">Summerized Text</legend>
+                            <div class="form-group">
+                                <p class="article-content">{{ form.result }}</p>
+                            </div>
+                        </fieldset>
+                    </form>
+            </div>
+   
+
+
+
+
+{% endblock content %}
